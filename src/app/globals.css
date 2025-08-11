@@ -8,8 +8,21 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+}
+
+/* define custom design tokens in v4 */
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 375px;
+  --breakpoint-lg2: 1024px;
+  --breakpoint-xl2: 1280px;
+  --breakpoint-xxl: 1440px;
+  --breakpoint-xxxl: 1960px;
+}
+
+.custom-transition {
+  transition: grid-template-rows 300ms ease-out, background-color 0ms ease-out;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +36,42 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.ts-lg2 {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .ts-lg2 {
+    display: block;
+  }
+  .ts-single {
+    display: none;
+  }
+}
+
+@keyframes ts-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.ts-row {
+  width: max-content;
+}
+.ts-animate {
+  animation: ts-marquee 32s linear infinite;
+}
+.ts-reverse {
+  animation-direction: reverse;
 }
