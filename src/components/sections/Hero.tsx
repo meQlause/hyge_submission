@@ -19,7 +19,7 @@ export default function Hero() {
             </div>
 
             <div className="relative max-w-[1440px] xxxl:mx-auto flex flex-col xxl:mx-[80px] z-20 xxl:flex-row xxl:justify-between xxl:items-center xxl:gap-[80px] items-start justify-end h-full  text-center">
-                <div>
+                <div className="not-xxl:px-[40px]">
                     <div className="mb-[12px]">
                         <div className="px-[12px] max-w-[210px] flex-row gap-2 justify-center items-center py-[6px] rounded-full bg-[#28282C] bg-opacity-10 backdrop-blur-md text-[10px] font-medium uppercase tracking-[1px] flex ">
                             <div className="flex justify-center items-center bg-white/70 size-[18px] rounded-full">

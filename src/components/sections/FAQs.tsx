@@ -10,7 +10,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ eyebrow, heading, subheading, c
     const toggle = (i: number) => setOpen((p) => (p === i ? -1 : i));
 
     return (
-        <section className="max-w-[1440px] xxxl:mx-auto flex flex-col xxl:flex-row xxl:justify-start gap-[80px] w-full min-w-[375px] bg-white px-[40px] xxl:px-[80px] pt-0 xxl:pt-[120px] pb-[60px]">
+        <section className="max-w-[1920px] xxxl:mx-auto flex flex-col xxl:flex-row xxl:justify-start gap-[80px] w-full min-w-[375px] bg-white px-[40px] xxl:px-[80px] pt-0 xxl:pt-[120px] pb-[60px]">
             <div className="mx-auto xxl:mx-0 max-w-[820px] text-center xxl:text-left">
                 <div className="inline-flex items-center rounded-full bg-[#28282C] text-white px-3 py-1 text-[12px] md:text-[14px] tracking-wide mb-4">
                     {eyebrow}

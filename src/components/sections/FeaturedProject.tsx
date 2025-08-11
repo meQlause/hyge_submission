@@ -7,7 +7,7 @@ import { FeaturedCarousel } from './../ui/Carousel';
 
 const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, heading, subheading, data }) => {
     return (
-        <section className="max-w-[1440px] xxxl:mx-auto w-full min-w-[375px] mx-auto px-[40px] xxl:px-[80px] py-[120px]">
+        <section className="max-w-[1920px] xxxl:mx-auto w-full min-w-[375px] px-[40px] xxl:px-[80px] py-[120px]">
             <div className="flex flex-col justify-center items-center">
                 <div className="inline-flex items-center rounded-full bg-[#28282C] px-[12px]  text-white text-[16px] py-[8px] mb-3">
                     <span className='font-[600] text-[16px]'>{eyebrow}</span>

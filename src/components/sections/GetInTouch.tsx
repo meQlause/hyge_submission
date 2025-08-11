@@ -43,7 +43,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
 
     return (
         <section className="w-full px-[20px] min-w-[375px] ">
-            <div className="max-w-[1400px] mx-auto rounded-xl bg-[#101014] text-neutral-100 px-[20px] py-[60px] xxl:px-[80px] xxl:py-[90px] flex flex-col lg2:flex-row justify-between gap-20">
+            <div className="max-w-[1920px] mx-auto rounded-xl bg-[#101014] text-neutral-100 px-[20px] py-[60px] xxl:px-[80px] xxl:py-[90px] flex flex-col lg2:flex-row justify-between gap-20">
                 <div className="lg2:max-w-[500px]">
 
                     <div className="flex flex-col gap-[20px] justify-start items-start">

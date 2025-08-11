@@ -1,7 +1,7 @@
 
 const ImprovementSpecialists = () => {
     return (
-        <section className="max-w-[1440px] xxxl:mx-auto flex flex-col lg2:flex-row lg2:gap-[300px] w-full min-w-[375px] px-[40px] xxl:px-[80px] text-black bg-white my-[120px] justify-between">
+        <section className="max-w-[1920px]  xxxl:mx-auto flex flex-col lg2:flex-row lg2:gap-[300px] w-full min-w-[375px] px-[40px] xxl:px-[80px] text-black bg-white my-[120px] justify-between">
             <div className="flex flex-col gap-[4px]">
                 <div className='bg-[#28282C] rounded-4xl px-[12px] py-[8px] w-fit text-white text-[12px]'>
                     <span className='text-[16px] font-[600]'>About us</span>
