@@ -32,7 +32,7 @@ const TestimonialSection: React.FC<TestimonialsProps> = (
     );
 
     return (
-        <section className="xs:px-[40px] max-w-[1960px] xxxl:mx-auto w-full min-w-[375px] py-[120px]">
+        <section className="xs:px-[40px] lg2:px-0 max-w-[1960px] xxxl:mx-auto w-full min-w-[375px] py-[120px]">
             <div className="flex flex-col justify-center items-center mb-[96px]">
                 <div className="inline-flex items-center rounded-full bg-[#28282C] text-white text-[16px] px-[12px] py-[8px] mb-[8px]">
                     {eyebrow}
