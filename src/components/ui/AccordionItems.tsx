@@ -20,7 +20,7 @@ const AccordionItemFAQ: React.FC<AccordionItemProps> = ({
         <>
             <button
                 id={buttonId}
-                className={`w-full bg-[#fafafa] px-[20px] flex items-center gap-3 py-5 text-left focus:outline-none transition-all duration-0 ${isOpen ? "rounded-t-2xl" : "rounded-2xl"
+                className={`w-full xxl:max-w-[800px] bg-[#fafafa] px-[20px] flex items-center gap-3 py-5 text-left focus:outline-none transition-all duration-0 ${isOpen ? "rounded-t-2xl" : "rounded-2xl"
                     }`}
                 aria-controls={panelId}
                 aria-expanded={isOpen}
@@ -40,7 +40,7 @@ const AccordionItemFAQ: React.FC<AccordionItemProps> = ({
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
-                className={`grid mb-[20px] px-[20px] ${isOpen
+                className={`xxl:max-w-[800px] grid mb-[20px] px-[20px] ${isOpen
                     ? "grid-rows-[1fr] rounded-b-2xl bg-[#fafafa]"
                     : "grid-rows-[0fr] rounded-t-2xl bg-transparent"
                     } custom-transition`}

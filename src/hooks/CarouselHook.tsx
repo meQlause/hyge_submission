@@ -1,3 +1,5 @@
+'use client'
+
 /* eslint-disable react-hooks/exhaustive-deps */
 import { UseCarouselDragOptionsProps } from "@/utils/interfaces";
 import { useRef, useState, useCallback, useEffect, useMemo } from "react";
@@ -48,7 +50,7 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
         startX.current = clientX;
     };
 
-    const sensitivity = 1.8;
+    const sensitivity = 2.5;
     const onMoveClientX = (clientX: number) => {
         if (!isDragging.current) return;
         const dx = (clientX - startX.current) * sensitivity; // amplify movement

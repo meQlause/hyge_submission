@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <section className="relative w-full min-w-[375px] bg-[#101014] xxl:h-[900px] h-[834px] mx-auto overflow-hidden text-white">
+        <section className="relative mx-auto w-full min-w-[375px] bg-[#101014] xxl:h-[900px] h-[834px] overflow-hidden text-white">
             <div className="absolute xxl:hidden inset-0 h-[695px] mx-[20px] mt-[113px] ">
                 <Image
                     src="/bg.png"
@@ -18,7 +18,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-[#101014CC]/80  z-10 w-full" />
             </div>
 
-            <div className="relative max-w-[1440px] xxxl:mx-auto flex flex-col xxl:mx-[80px] z-20 xxl:flex-row xxl:justify-between xxl:items-center xxl:gap-[80px] items-start justify-end h-full  text-center">
+            <div className="relative max-w-[1440px] xxl:px-[80px] flex flex-col mx-auto z-20 xxl:flex-row xxl:justify-between xxl:items-center xxl:gap-[80px] items-start justify-end h-full  text-center">
                 <div className="not-xxl:px-[40px]">
                     <div className="mb-[12px]">
                         <div className="px-[12px] max-w-[210px] flex-row gap-2 justify-center items-center py-[6px] rounded-full bg-[#28282C] bg-opacity-10 backdrop-blur-md text-[10px] font-medium uppercase tracking-[1px] flex ">
@@ -29,7 +29,7 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    <h1 className="text-[40px] lg2:text-[56px] text-left font-[500] -tracking-[1px] leading-[120%] mb-[10px] w-full min-w-[292px]">
+                    <h1 className="text-[40px] xl2:max-w-[900px] lg2:text-[56px] text-left font-[500] -tracking-[1px] leading-[120%] mb-[10px] w-full min-w-[292px]">
                         Your trusted partner for quality home improvement
                     </h1>
 
@@ -45,7 +45,7 @@ export default function Hero() {
                         </div>
                     </button>
                 </div>
-                <div className="hidden xxl:block h-[845px] relative overflow-hidden w-[1200] rounded-[12px] ">
+                <div className="hidden xxl:flex xxl:justify-end xxl:items-end h-[845px] relative overflow-hidden w-[1000px] rounded-[12px] ">
                     <Image
                         src="/bg.png"
                         alt="Interior background"
@@ -54,6 +54,37 @@ export default function Hero() {
                         className="z-0 rounded-[12px] object-cover"
                         priority
                     />
+                    <div className="hidden xxl:block xxxl:hidden h-[181px] w-[240px] p-[24px] z-40 mr-[20px] mb-[20px] bg-transparent backdrop-blur-lg overflow-hidden rounded-[12px]">
+                        <div className="flex gap-1">
+                            <span key={1} aria-hidden className="text-white text-lg">
+                                ★
+                            </span>
+                            <span key={2} aria-hidden className="text-white text-lg">
+                                ★
+                            </span>
+                            <span key={3} aria-hidden className="text-white text-lg">
+                                ★
+                            </span>
+                            <span key={4} aria-hidden className="text-white text-lg">
+                                ★
+                            </span>
+                            <span key={5} aria-hidden className="text-white text-lg">
+                                ★
+                            </span>
+                            <span key={6} aria-hidden className="text-white text-lg">
+                                ★
+                            </span>
+                        </div>
+                        <span className="text-[14px] font-[400] text-left flex">
+                            &quot;LifetimeArt has been a game-
+                            changer for my home. Their
+                            ability to blend functionality
+                            with exquisite design is
+                            unparalleled.&quot;
+                        </span>
+                    </div>
+
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/0 z-10" />
                 </div>
             </div>
         </section>

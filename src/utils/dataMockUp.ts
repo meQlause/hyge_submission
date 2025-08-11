@@ -164,17 +164,19 @@ export const CONTACTS = {
 }
 
 export const NAV_LINKS = [
-    { href: "#", label: "About" },
-    { href: "#", label: "Services" },
-    { href: "#", label: "Our work" },
-    { href: "#", label: "FAQs" },
-    { href: "#", label: "Contact" },
+    { href: "/About", label: "About" },
+    { href: "/Services", label: "Services" },
+    { href: "/Our", label: "Our work" },
+    { href: "/FAQs", label: "FAQs" },
+    { href: "/Contact", label: "Contact" },
 ];
 
 export const IMAGES = [
     { src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1974&auto=format&fit=crop", alt: "Warm minimalist dining room with wood table and framed art" },
     { src: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1974&auto=format&fit=crop", alt: "Cozy living room with sunlit sofa and plants" },
     { src: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1974&auto=format&fit=crop", alt: "Modern cabin with large windows in a lush forest" },
+    { src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1974&auto=format&fit=crop", alt: "Minimal living space with neutral palette" },
+    { src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1974&auto=format&fit=crop", alt: "Minimal living space with neutral palette" },
     { src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1974&auto=format&fit=crop", alt: "Minimal living space with neutral palette" },
 ];
 

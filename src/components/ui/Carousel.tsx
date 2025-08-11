@@ -69,7 +69,7 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
                 {...eventProps}
             >
                 {testimonials.map((t, i) => (
-                    <div key={i} className="shrink-0 h-[317px] w-full max-w-[720px] px-2">
+                    <div key={i} className="shrink-0 h-[317px] mr-4 w-full max-w-[720px] ">
                         <article className="mt-[0px] p-[32px] bg-[#FAFAFA] border-[#E6E6E6] rounded-2xl shadow-sm w-full h-[317px]">
                             {!!t.rating && t.rating > 0 && (
                                 <div className="flex gap-1 mb-[9px]">

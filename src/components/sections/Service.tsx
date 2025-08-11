@@ -25,8 +25,8 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ eyebrow, heading, subhe
                 </p>
             </div>
 
-            <div className="max-w-[1440px] xxxl:mx-auto mt-[96px] flex flex-col lg2:flex-row gap-[40px] items-start justify-center lg2:gap-[80px]">
-                <div className="relative mt-[15px] overflow-hidden rounded-xl bg-neutral-100 w-full min-h-[330px]  lg2:min-h-[493px] lg2:min-w-[432px] xxl:min-w-[600px] xxl:min-h-[685px]">
+            <div className="max-w-[1440px] mx-auto mt-[96px] flex flex-col lg2:flex-row gap-[40px] items-start justify-center lg2:gap-[80px]">
+                <div className="relative mt-[15px] overflow-hidden rounded-xl bg-neutral-100 w-full min-h-[330px]  lg2:min-h-[493px] lg2:min-w-[432px] xxl:min-w-[600px] xxl:min-h-[685px] xxxl:min-w-[680px] xxxl:min-h-[777px]">
                     <Image
                         src={image.src}
                         alt={image.alt}

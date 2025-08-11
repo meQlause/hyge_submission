@@ -32,7 +32,7 @@ const TestimonialSection: React.FC<TestimonialsProps> = (
     );
 
     return (
-        <section className="max-w-[1920px] xxxl:mx-auto w-full min-w-[375px] px-[40px] py-[120px]">
+        <section className="xs:px-[40px] max-w-[1960px] xxxl:mx-auto w-full min-w-[375px] py-[120px]">
             <div className="flex flex-col justify-center items-center mb-[96px]">
                 <div className="inline-flex items-center rounded-full bg-[#28282C] text-white text-[16px] px-[12px] py-[8px] mb-[8px]">
                     {eyebrow}
@@ -45,7 +45,7 @@ const TestimonialSection: React.FC<TestimonialsProps> = (
                     {subheading}
                 </p>
             </div>
-            <div className="lg2:hidden block">
+            <div className="lg2:hidden block ">
                 <TestimonialCarousel testimonials={testimonial} />
             </div>
 

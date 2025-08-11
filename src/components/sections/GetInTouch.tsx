@@ -42,8 +42,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
     };
 
     return (
-        <section className="w-full px-[20px] min-w-[375px] ">
-            <div className="max-w-[1920px] mx-auto rounded-xl bg-[#101014] text-neutral-100 px-[20px] py-[60px] xxl:px-[80px] xxl:py-[90px] flex flex-col lg2:flex-row justify-between gap-20">
+        <section className="max-w-[1440px] mx-auto w-full px-[20px] min-w-[375px] ">
+            <div className="max-w-[1400px] rounded-xl bg-[#101014] text-neutral-100 px-[20px] py-[60px] xxl:px-[80px] xxl:py-[90px] flex flex-col lg2:flex-row justify-between gap-20">
                 <div className="lg2:max-w-[500px]">
 
                     <div className="flex flex-col gap-[20px] justify-start items-start">
@@ -91,7 +91,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
                 </div>
                 <form
                     onSubmit={handleSubmit}
-                    className="mt-[100px] lg2:w-[422px] xxl:w-[570px] flex flex-col justify-between xs:h-[564px] bg-white text-neutral-900 rounded-lg p-4 shadow-sm max-w-[700px] w-full"
+                    className="mt-[100px] lg2:w-[422px] xxl:w-[570px] flex flex-col justify-between xs:h-[564px] bg-white text-neutral-900 rounded-lg p-4 xxxl:w-[570px] w-full"
                 >
                     <Field
                         label="Name"
@@ -111,6 +111,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
                     <Field
                         label="Phone Number"
                         placeholder="+44 7890 123456"
+                        required
                         value={form.phone}
                         onChange={(v) => setForm((s) => ({ ...s, phone: v }))}
                     />
