@@ -50,7 +50,7 @@ export default function Hero() {
                         src="/bg.png"
                         alt="Interior background"
                         fill
-                        sizes="100px"
+                        sizes="1000px"
                         className="z-0 rounded-[12px] object-cover"
                         priority
                     />
