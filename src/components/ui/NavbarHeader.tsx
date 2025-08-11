@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 ? " bg-neutral-600/70 rounded-lg my-[20px]" : "xxl:bg-transparent"
                 }`}
         >
-            <div className={`max-w-[1600px] xxxl:mx-auto lg2:px-[40px] xs:py-3 xs:px-4 xs:rounded-4xl h-full lg2:py-[20px] flex items-center justify-between w-full xxl:px-[80px] ${isHeader ? "backdrop-blur-md" : "rounded-lg xxl:backdrop-blur-none backdrop-blur-md"}`}>
+            <div className={`max-w-[1600px] xxxl:mx-auto lg2:px-[40px] xs:py-3 xs:px-4 xs:rounded-lg h-full lg2:py-[20px] flex items-center justify-between w-full xxl:px-[80px] ${isHeader ? "backdrop-blur-md" : "rounded-lg xxl:backdrop-blur-none backdrop-blur-md"}`}>
                 <Link href="/" className="flex items-center gap-2">
                     <span className="relative size-[32px]">
                         <Image src={logo} alt={`${brand} logo`} fill sizes="20px" />

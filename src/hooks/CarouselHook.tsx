@@ -50,9 +50,10 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
         startX.current = clientX;
     };
 
+    const sensitivity = 1.8;
     const onMoveClientX = (clientX: number) => {
         if (!isDragging.current) return;
-        const dx = clientX - startX.current;
+        const dx = (clientX - startX.current) * sensitivity; // amplify movement
         const proposed = lastX.current + dx;
         const { min, max } = getBounds();
         posX.current = Math.max(min, Math.min(max, proposed));
