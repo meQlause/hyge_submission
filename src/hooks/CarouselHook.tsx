@@ -28,7 +28,7 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
     const getBounds = () => {
         const container = containerRef.current;
         const track = trackRef.current;
-        if (!container || !track) return { min: 0, max: 0 };
+        if (!container || !track) return { min: 0, max: 0 }
         const max = 0;
         const min = container.clientWidth - track.scrollWidth; // negative
         return { min, max };
@@ -39,10 +39,8 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
         if (!w) return;
         const i = Math.round((-posX.current) / w);
         const clamped = Math.max(0, Math.min(length - 1, i));
-        if (clamped !== active) {
-            setActive(clamped);
-            onChange?.(clamped);
-        }
+        setActive(clamped);
+        onChange?.(clamped);
     };
 
     const onDown = (clientX: number) => {
@@ -58,7 +56,6 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
         const { min, max } = getBounds();
         posX.current = Math.max(min, Math.min(max, proposed));
         setX(posX.current);
-        updateActive();
     };
 
     const onUpBase = () => {
