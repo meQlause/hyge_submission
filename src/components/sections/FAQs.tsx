@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { FAQSectionProps } from "@/utils/interfaces";
 import { Accordion } from "../ui/AccordionItems";
 
@@ -12,11 +13,11 @@ const FAQSection: React.FC<FAQSectionProps> = ({ eyebrow, heading, subheading, c
     return (
         <section className="max-w-[1440px] mx-auto flex flex-col xxl:flex-row xxl:justify-start gap-[80px] w-full min-w-[375px] bg-white px-[40px] xxl:px-[80px] xxl:pt-[120px] pb-[60px]">
             <div className="mx-auto xxl:mx-0 text-center xxl:text-left">
-                <div className="inline-flex items-center rounded-full bg-[#28282C] text-white px-3 py-1 text-[12px]  tracking-wide mb-4 ">
+                <div className="inline-flex items-center rounded-full bg-[#28282C] text-white px-3 py-1 text-[12px] tracking-wide mb-4 ">
                     {eyebrow}
                 </div>
 
-                <h2 className="text-[48px]  leading-[120%] font-[500] tracking-tight text-neutral-900">
+                <h2 className="text-[48px] leading-[120%] font-[500] tracking-tight text-neutral-900">
                     {heading}
                 </h2>
 
@@ -24,17 +25,22 @@ const FAQSection: React.FC<FAQSectionProps> = ({ eyebrow, heading, subheading, c
                     <p className="text-[20px] xs:w-[300px] leading-[170%] text-neutral-600">
                         {subheading}
                     </p>
+
                     {cta && (
-                        <button
+                        <motion.button
                             type="button"
                             onClick={cta.onClick}
-                            className="inline-flex items-center gap-2 rounded-full bg-[#e7e7e7] border border-neutral-200 px-4 py-2 text-[14px] font-medium text-neutral-900 hover:bg-neutral-50 active:bg-neutral-100 transition"
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ duration: 0.3, ease: "easeOut", delay: 0.08 }}
+                            className="inline-flex items-center gap-2 rounded-full bg-[#e7e7e7] border border-neutral-200 px-4 py-2 text-[14px] font-medium text-neutral-900 hover:bg-neutral-50 active:bg-neutral-100 transition cursor-pointer"
                         >
                             {cta.label}
                             <div className="bg-black p-[6px] rounded-full">
                                 <ArrowRight className="text-white size-[20px] -rotate-45" />
                             </div>
-                        </button>
+                        </motion.button>
                     )}
                 </div>
             </div>
@@ -52,8 +58,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ eyebrow, heading, subheading, c
                     </Accordion.FAQ>
                 ))}
             </div>
-        </section >
+        </section>
     );
-}
+};
 
-export default FAQSection
+export default FAQSection;

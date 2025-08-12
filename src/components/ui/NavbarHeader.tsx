@@ -14,6 +14,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
     const [open, setOpen] = useState(false);
     const dialogId = useId();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => setMounted(true), 50);
+        return () => clearTimeout(timeout);
+    }, []);
 
     useEffect(() => {
         document.documentElement.classList.toggle("overflow-hidden", open);
@@ -32,9 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
     return (
         <header
-            className={`my-[20px] lg2:m-0 lg2:h-[96px] lg2:rounded-none lg2:bg-[#101014] bg-[#00000099] fixed max-w-[90%]  mx-[5%] lg2:mx-0 lg2:max-w-[100%] z-30 w-full transition-all duration-300 ease-in-out ${isHeader
-                ? " bg-neutral-600/70 rounded-lg my-[20px]" : "xxl:bg-transparent"
-                }`}
+            className={`my-[20px] lg2:m-0 lg2:h-[96px] lg2:rounded-none lg2:bg-[#101014] bg-[#00000099] fixed max-w-[90%]  mx-[5%] lg2:mx-0 lg2:max-w-[100%] z-30 w-full transition-all duration-300 ease-in-out 
+                ${isHeader ? " bg-neutral-600/70 rounded-lg my-[20px]" : "xxl:bg-transparent"}
+                ${!mounted && "-translate-y-[20px] opacity-0"}`}
         >
             <div className={`max-w-[1450px] mx-auto lg2:px-[40px] py-3 px-4 rounded-lg h-full lg2:py-[20px] flex items-center justify-between w-full xxl:px-[80px] ${isHeader ? "backdrop-blur-md" : "rounded-lg xxl:backdrop-blur-none backdrop-blur-md"}`}>
                 <Link href="/" className="flex items-center gap-2">
@@ -50,10 +56,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                             <li key={item.href} className="">
                                 <Link
                                     href={item.href}
-                                    className="block text-white text-[18px] font-[500] leading-tight hover:opacity-90"
+                                    className="block text-white text-[18px] font-[500] leading-tight hover:opacity-90 relative group"
                                     onClick={() => setOpen(false)}
                                 >
                                     {item.label}
+                                    {/* smooth underline on hover */}
+                                    <span
+                                        aria-hidden
+                                        className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 bg-white/90 transition-transform duration-300 ease-out group-hover:scale-x-100"
+                                    />
                                 </Link>
                             </li>
                         ))}

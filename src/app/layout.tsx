@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import Providers from "./provider";
 
 const manrope = Manrope({
   weight: ["200", "300", "400", "500", "600"],
@@ -22,7 +23,9 @@ export default function RootLayout({
       <body
         className={`${manrope.className} bg-white min-w-[375px] text-neutral-900 font-sans antialiased subpixel-antialiased`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

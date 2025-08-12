@@ -1,24 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import {
-    Instagram,
-} from "lucide-react";
+import { Instagram } from "lucide-react";
+import { motion } from "framer-motion"; // ← add
 import { ContactSectionProps } from "@/utils/interfaces";
 import { FieldArea } from "../ui/FieldArea";
 import { Field } from "../ui/Field";
 import { Social } from "../ui/Social";
 import { DetailRow } from "../ui/DetailRow";
 
-
 const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, officeAddress, email, phone, onSubmit }) => {
     const [loading, setLoading] = useState(false);
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-    });
+    const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -44,10 +37,16 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
     return (
         <section className="max-w-[1440px] mx-auto w-full px-[20px] min-w-[375px] ">
             <div className="max-w-[1400px] rounded-xl bg-[#101014] text-neutral-100 px-[20px] py-[60px] xxl:px-[80px] xxl:py-[90px] flex flex-col lg2:flex-row justify-between gap-20">
-                <div className="lg2:max-w-[500px]">
 
+                {/* LEFT column (fade-up) */}
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ duration: 0.32, ease: "easeOut" }}
+                    className="lg2:max-w-[500px]"
+                >
                     <div className="flex flex-col gap-[20px] justify-start items-start">
-
                         <div className="items-center rounded-full bg-neutral-800 text-white text-[16px] px-3 py-1 mb-3">
                             {eyebrow}
                         </div>
@@ -59,20 +58,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
                     </div>
 
                     <div className="mt-[48px] pb-[31px] space-y-4 border-b border-neutral-800/80 pt-5">
-                        <DetailRow
-                            label="Office"
-                            value={officeAddress}
-                        />
-                        <DetailRow
-                            label="Email"
-                            value={email}
-                        />
-                        <DetailRow
-                            label="Telephone"
-                            value={phone}
-                        />
-
+                        <DetailRow label="Office" value={officeAddress} />
+                        <DetailRow label="Email" value={email} />
+                        <DetailRow label="Telephone" value={phone} />
                     </div>
+
                     <div className="pt-[48px]">
                         <p className="text-[18px] font-[600] text-neutral-100 mb-2">Follow us</p>
                         <div className="flex items-center gap-3">
@@ -87,10 +77,15 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
                             </Social>
                         </div>
                     </div>
+                </motion.div>
 
-                </div>
-                <form
+                {/* RIGHT column (form) (fade-up with slight delay) */}
+                <motion.form
                     onSubmit={handleSubmit}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ duration: 0.32, ease: "easeOut", delay: 0.08 }}
                     className="mt-[100px] lg2:w-[422px] xxl:w-[570px] flex flex-col justify-between xs:h-[564px] bg-white text-neutral-900 rounded-lg p-4 xxxl:w-[570px] w-full"
                 >
                     <Field
@@ -130,10 +125,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
                     >
                         {loading ? "Sending…" : "Send message"}
                     </button>
-                </form>
+                </motion.form>
             </div>
         </section>
     );
-}
+};
 
-export default ContactSection
+export default ContactSection;

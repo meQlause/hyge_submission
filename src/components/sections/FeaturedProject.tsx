@@ -3,47 +3,74 @@
 import Image from "next/image";
 import { Quote } from "lucide-react";
 import { FeaturedProjectProps } from "@/utils/interfaces";
-import { FeaturedCarousel } from './../ui/Carousel';
+import { FeaturedCarousel } from "./../ui/Carousel";
+import { motion } from "framer-motion";
 
 const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, heading, subheading, data }) => {
     return (
         <section className="xs:px-[40px] xxxl:max-w-[1440px] xxl:max-w-[1280px] xl2:max-w-[1200] lg2:max-w-[994px] xs:max-w-[295px] mx-auto w-full min-w-[375px]  py-[120px]">
             <div className="flex flex-col justify-center items-center">
-                <div className="inline-flex items-center rounded-full bg-[#28282C] px-[12px]  text-white text-[16px] py-[8px] mb-3">
-                    <span className='font-[600] text-[16px]'>{eyebrow}</span>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.28, ease: "easeOut" }}
+                    className="inline-flex items-center rounded-full bg-[#28282C] px-[12px]  text-white text-[16px] py-[8px] mb-3"
+                >
+                    <span className="font-[600] text-[16px]">{eyebrow}</span>
+                </motion.div>
 
-                <h2 className="text-[48px] font-semibold xxl:max-w-[700px] w-full text-center lg2:max-w-[400px] tracking-tight text-neutral-900">
+                <motion.h2
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.32, ease: "easeOut", delay: 0.06 }}
+                    className="text-[48px] font-semibold xxl:max-w-[700px] w-full text-center lg2:max-w-[400px] tracking-tight text-neutral-900"
+                >
                     {heading}
-                </h2>
-                <p className="mt-[16px] mb-[120px] text-[20px] w-full lg2:max-w-[500px] max-w-[295px] text-center text-neutral-600">
+                </motion.h2>
+
+                <motion.p
+                    initial={{ opacity: 0, x: 16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.3, ease: "easeOut", delay: 0.12 }}
+                    className="mt-[16px] mb-[120px] text-[20px] w-full lg2:max-w-[500px] max-w-[295px] text-center text-neutral-600"
+                >
                     {subheading}
-                </p>
+                </motion.p>
             </div>
 
-            <div className="flex lg2:hidden flex-col gap-[300px]"
+            {/* Mobile carousel */}
+            <motion.div
+                className="flex lg2:hidden flex-col gap-[300px]"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
             >
                 <FeaturedCarousel featured={data} />
-            </div>
+            </motion.div>
 
-            <div className="hidden lg2:flex flex-col lg2:gap-[20px] xxl:gap-[460px]"
-            >
+            {/* Desktop cards */}
+            <div className="hidden lg2:flex flex-col lg2:gap-[20px] xxl:gap-[460px]">
                 {data.map((item, index) => {
                     const isEven = (index + 1) % 2 === 0;
 
                     return (
-                        <article
+                        <motion.article
                             key={index}
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.32, ease: "easeOut", delay: index * 0.2 }}
                             className={[
                                 "bg-[#E9ECF2]  backdrop-blur-sm rounded-xl lg2:p-[20px] xxl:p-[32px] overflow-hidden",
                                 "flex justify-center items-center flex-col",
-                                isEven
-                                    ? "lg2:bg-[#0E0F12] lg2:text-white"
-                                    : "lg2:bg-[#E9ECF2] lg2:text-[#101014]",
+                                isEven ? "lg2:bg-[#0E0F12] lg2:text-white" : "lg2:bg-[#E9ECF2] lg2:text-[#101014]",
                             ].join(" ")}
                         >
                             <div className="flex gap-[80px]">
-
                                 <div className="relative xxxl:min-w-[648px] xxxl:h-[500x] xxl:min-w-[568px] xxl:h-[500px] xl2:min-w-[560px] xl2:h-[492px] lg2:min-w-[432px] lg2:h-[380px] xs:w-[295px] xs:h-[337px] rounded-lg overflow-hidden bg-neutral-200">
                                     <Image
                                         src={item.image.src}
@@ -56,7 +83,6 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                                 </div>
 
                                 <div className="flex flex-col justify-center">
-
                                     <h3
                                         className={[
                                             "text-[40px] font-[500] tracking-tight",
@@ -88,10 +114,9 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                                             </span>
                                         ))}
                                     </div>
+
                                     {item.testimonial?.quote && (
-                                        <div
-                                            className="xl2:block hidden px-5 pb-5 lg2:px-0 lg2:col-span-2 lg2:py-6"
-                                        >
+                                        <div className="xl2:block hidden px-5 pb-5 lg2:px-0 lg2:col-span-2 lg2:py-6">
                                             <div className="flex items-start gap-2">
                                                 <Quote
                                                     className={[
@@ -125,9 +150,7 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                                                 <span
                                                     className={[
                                                         "text-[16px] text-neutral-700",
-                                                        isEven
-                                                            ? "lg2:text-neutral-200"
-                                                            : "lg2:text-neutral-700",
+                                                        isEven ? "lg2:text-neutral-200" : "lg2:text-neutral-700",
                                                     ].join(" ")}
                                                 >
                                                     {item.testimonial.author}
@@ -139,9 +162,7 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                             </div>
 
                             {item.testimonial?.quote && (
-                                <div
-                                    className="lg2:block xl2:hidden hidden px-5 pb-5 lg2:px-0 lg2:col-span-2 lg2:py-6"
-                                >
+                                <div className="lg2:block xl2:hidden hidden px-5 pb-5 lg2:px-0 lg2:col-span-2 lg2:py-6">
                                     <div className="flex items-start gap-2">
                                         <Quote
                                             className={[
@@ -175,9 +196,7 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                                         <span
                                             className={[
                                                 "text-[16px] text-neutral-700",
-                                                isEven
-                                                    ? "lg2:text-neutral-200"
-                                                    : "lg2:text-neutral-700",
+                                                isEven ? "lg2:text-neutral-200" : "lg2:text-neutral-700",
                                             ].join(" ")}
                                         >
                                             {item.testimonial.author}
@@ -185,12 +204,12 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                                     </div>
                                 </div>
                             )}
-                        </article>
+                        </motion.article>
                     );
                 })}
             </div>
-        </section >
+        </section>
     );
-}
+};
 
-export default FeaturedProjectSection
+export default FeaturedProjectSection;

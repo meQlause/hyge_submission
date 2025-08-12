@@ -70,7 +70,7 @@ body {
   width: max-content;
 }
 .ts-animate {
-  animation: ts-marquee 32s linear infinite;
+  animation: ts-marquee 110s linear infinite;
 }
 .ts-reverse {
   animation-direction: reverse;

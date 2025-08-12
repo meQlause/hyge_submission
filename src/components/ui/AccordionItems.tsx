@@ -20,7 +20,7 @@ const AccordionItemFAQ: React.FC<AccordionItemProps> = ({
         <>
             <button
                 id={buttonId}
-                className={`w-full xxl:max-w-[800px] bg-[#fafafa] px-[20px] flex items-center gap-3 py-5 text-left focus:outline-none transition-all duration-0 ${isOpen ? "rounded-t-2xl" : "rounded-2xl"
+                className={`cursor-pointer w-full xxl:max-w-[800px] bg-[#fafafa] px-[20px] flex items-center gap-3 py-5 text-left focus:outline-none transition-all duration-0 ${isOpen ? "rounded-t-2xl" : "rounded-2xl"
                     }`}
                 aria-controls={panelId}
                 aria-expanded={isOpen}
@@ -65,11 +65,11 @@ const AccordionItemService: React.FC<AccordionItemProps> = ({
     const buttonId = useId();
 
     return (
-        <div className="border-b border-neutral-200">
+        <div className="border-b  border-neutral-200">
             <button
                 title="service"
                 id={buttonId}
-                className="w-full flex items-center gap-3 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900/20"
+                className={`px-2 ${isOpen && "bg-black/5"} w-full hover:bg-black/5 cursor-pointer  transition-all duration-500 flex items-center gap-3 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900/20`}
                 aria-controls={panelId}
                 aria-expanded={isOpen}
                 onClick={() => onToggle(index)}
@@ -92,7 +92,7 @@ const AccordionItemService: React.FC<AccordionItemProps> = ({
                     }`}
             >
                 <div className="overflow-hidden">
-                    <div className="pb-6 text-[16px] leading-[170%] text-neutral-600">
+                    <div className="bg-black/5 px-2 pb-6 text-[16px] leading-[170%] text-neutral-600">
                         {children}
                     </div>
                 </div>
