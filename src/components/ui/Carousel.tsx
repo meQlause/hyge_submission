@@ -2,60 +2,96 @@
 
 import { useCarouselDrag } from "@/hooks/CarouselHook";
 import { CarouselProps, FeaturedCarouselProps, TestimonialCarouselProps } from "@/utils/interfaces";
+import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
 
+
 export const Carousel: React.FC<CarouselProps> = ({ className, images }) => {
     const { containerRef, trackRef, active, goTo, eventProps } = useCarouselDrag({
         length: images.length,
+        startIndex: 0,
     });
 
     return (
-        <div ref={containerRef} className={`overflow-hidden relative max-w-[1920px] xxxl:mx-auto ${className ?? ""}`}>
+        <div
+            ref={containerRef}
+            className={`overflow-hidden relative max-w-[1920px] xxxl:mx-auto ${className ?? ""}`}
+        >
             <div
-                ref={trackRef}
-                className="flex will-change-transform select-none"
-                style={{ transform: "translateX(0px)" }}
+                className="hidden lg2:flex ts-row ts-animate w-full gap-10 whitespace-nowrap"
                 role="group"
                 aria-roledescription="carousel"
-                {...eventProps}
-            ><div className="flex w-full gap-10">
-                    {images.map((img, i) => (
-                        <div key={i} className="shrink-0 h-[400px] w-[320px] xxl:h-[500] xxl:w-[400] lg2:max-w-[400px]">
-                            <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
-                                <Image src={img.src} alt={img.alt} fill className="object-cover" />
-                            </div>
+            >
+                {[...images, ...images].map((img, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+                        className="inline-block shrink-0 h-[400px] w-[320px] xxl:h-[500] xxl:w-[400] lg2:max-w-[400px]"
+                        aria-roledescription="slide"
+                        aria-label={`${(i % images.length) + 1} of ${images.length}`}
+                    >
+                        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+                            <Image src={img.src} alt={img.alt} fill className="object-cover" />
                         </div>
-                    ))}
-                </div>
+                    </motion.div>
+                ))}
             </div>
 
-            {images.length > 1 && (
-                <div className="lg2:hidden mt-[40px] flex items-center justify-center gap-2">
-                    {images.map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => goTo(i)}
-                            aria-label={`Go to slide ${i + 1}`}
-                            className={`h-2.5 w-2.5 rounded-full transition-all ${i === active ? "bg-neutral-900 w-6" : "bg-neutral-400/70"
-                                }`}
-                        />
-                    ))}
+            <div className="lg2:hidden">
+                <div
+                    ref={trackRef}
+                    className="flex will-change-transform select-none"
+                    style={{ transform: "translateX(0px)" }}
+                    role="group"
+                    aria-roledescription="carousel"
+                    {...eventProps}
+                >
+                    <div className="flex w-full gap-[30px]">
+                        {images.map((img, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+                                className="shrink-0 h-[400px] w-[320px] xxl:h-[500] xxl:w-[400] lg2:max-w-[400px]"
+                            >
+                                <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+                                    <Image src={img.src} alt={img.alt} fill className="object-cover" />
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
-            )}
+
+                {images.length > 1 && (
+                    <div className="lg2:hidden mt-[40px] flex items-center justify-center gap-2">
+                        {images.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => goTo(i)}
+                                aria-label={`Go to slide ${i + 1}`}
+                                className={`h-2.5 w-2.5 rounded-full transition-all ${i === active ? "bg-neutral-900 w-6" : "bg-neutral-400/70"
+                                    }`}
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
-
 
 export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
     className,
     testimonials,
 }) => {
     const { containerRef, trackRef, active, goTo, eventProps } = useCarouselDrag({
-        length: testimonials.length,
+        length: testimonials.length, startIndex: 0,
     });
 
     return (
@@ -132,7 +168,7 @@ export const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
         <div ref={containerRef} className={`overflow-hidden relative ${className ?? ""}`}>
             <div
                 ref={trackRef}
-                className="flex will-change-transform select-none"
+                className="flex will-change-transform gap-[30px] select-none"
                 style={{ transform: "translateX(0px)" }}
                 role="group"
                 aria-roledescription="carousel"
@@ -141,7 +177,7 @@ export const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
                 {featured.map((item, index) => {
                     const isEven = index % 2 === 0;
                     return (
-                        <div key={index} className="shrink-0 w-full px-2">
+                        <div key={index} className="shrink-0 w-full">
                             <article
                                 className={[
                                     "mt-6 bg-[#E9ECF2] backdrop-blur-sm rounded-xl lg2:p-[20px] overflow-hidden",
@@ -240,7 +276,6 @@ export const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
                                     )}
                                 </div>
 
-                                {/* Mobile / tablet quote */}
                                 {item.testimonial?.quote && (
                                     <div className="xl2:hidden px-5 pb-5 lg2:px-0 lg2:col-span-2 lg2:py-6">
                                         <div className="flex items-start gap-2">

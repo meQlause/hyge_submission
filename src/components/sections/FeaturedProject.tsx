@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, heading, subheading, data }) => {
     return (
-        <section className="xs:px-[40px] xxxl:max-w-[1440px] xxl:max-w-[1280px] xl2:max-w-[1200] lg2:max-w-[994px] xs:max-w-[295px] mx-auto w-full min-w-[375px]  py-[120px]">
+        <section id="our-work" className="px-[40px] lg:px-0 xxxl:max-w-[1440px] xxl:max-w-[1380px] xl2:max-w-[1200] lg2:max-w-[994px] xs:min-w-[295px] lg2:mx-auto w-full min-w-[375px] py-[120px]">
             <div className="flex flex-col justify-center items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -41,7 +41,6 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                 </motion.p>
             </div>
 
-            {/* Mobile carousel */}
             <motion.div
                 className="flex lg2:hidden flex-col gap-[300px]"
                 initial={{ opacity: 0, y: 12 }}
@@ -52,7 +51,6 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                 <FeaturedCarousel featured={data} />
             </motion.div>
 
-            {/* Desktop cards */}
             <div className="hidden lg2:flex flex-col lg2:gap-[20px] xxl:gap-[460px]">
                 {data.map((item, index) => {
                     const isEven = (index + 1) % 2 === 0;
@@ -71,7 +69,7 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                             ].join(" ")}
                         >
                             <div className="flex gap-[80px]">
-                                <div className="relative xxxl:min-w-[648px] xxxl:h-[500x] xxl:min-w-[568px] xxl:h-[500px] xl2:min-w-[560px] xl2:h-[492px] lg2:min-w-[432px] lg2:h-[380px] xs:w-[295px] xs:h-[337px] rounded-lg overflow-hidden bg-neutral-200">
+                                <div className="relative xxxl:min-w-[648px] xxxl:h-[500x] xxl:min-w-[568px] xxl:h-[500px] xl2:min-w-[560px] xl2:h-[492px] lg2:min-w-[432px] lg2:h-[380px] min-w-[295px] min-h-[337px] w-full rounded-lg overflow-hidden bg-neutral-200">
                                     <Image
                                         src={item.image.src}
                                         alt={item.image.alt}
@@ -116,8 +114,8 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                                     </div>
 
                                     {item.testimonial?.quote && (
-                                        <div className="xl2:block hidden px-5 pb-5 lg2:px-0 lg2:col-span-2 lg2:py-6">
-                                            <div className="flex items-start gap-2">
+                                        <div className="xl2:block hidden lg2:px-0 lg2:col-span-2 lg2:pt-6">
+                                            <div className="flex items-start gap-2]">
                                                 <Quote
                                                     className={[
                                                         "w-4 h-4 mt-1 shrink-0",
@@ -162,8 +160,8 @@ const FeaturedProjectSection: React.FC<FeaturedProjectProps> = ({ eyebrow, headi
                             </div>
 
                             {item.testimonial?.quote && (
-                                <div className="lg2:block xl2:hidden hidden px-5 pb-5 lg2:px-0 lg2:col-span-2 lg2:py-6">
-                                    <div className="flex items-start gap-2">
+                                <div className="lg2:block xl2:hidden hidden px-5 pb-5 lg2:px-0 lg2:col-span-2">
+                                    <div className="flex items-start pt-[20px] gap-2">
                                         <Quote
                                             className={[
                                                 "w-4 h-4 mt-1 shrink-0",

@@ -65,14 +65,18 @@ const TestimonialSection: React.FC<TestimonialsProps> = (
             <div className="ts-lg2 mt-[96px]">
                 <div className="overflow-hidden">
                     <div className="ts-row ts-animate flex gap-4 whitespace-nowrap will-change-transform">
-                        {[...testimonial, ...testimonial].map((t, i) => TestiCard(t, i))}
+                        {Array(4)
+                            .fill([...testimonial.slice()])
+                            .flat().map((t, i) => TestiCard(t, i))}
                     </div>
                 </div>
                 <div className="overflow-hidden mt-[48px]">
                     <div className="ts-row ts-animate ts-reverse flex gap-[16px] whitespace-nowrap will-change-transform">
-                        {[...testimonial.slice().reverse(), ...testimonial.slice().reverse()].map(
-                            (t, i) => TestiCard(t, i)
-                        )}
+                        {Array(6)
+                            .fill([...testimonial.slice().reverse()])
+                            .flat().map(
+                                (t, i) => TestiCard(t, i)
+                            )}
                     </div>
                 </div>
             </div>

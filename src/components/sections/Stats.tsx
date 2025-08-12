@@ -14,7 +14,7 @@ function StatItem({
     index: number;
 }) {
     const ref = useRef<HTMLDivElement | null>(null);
-    const inView = useInView(ref, { once: true, amount: 0.35 }); // trigger saat 35% item masuk
+    const inView = useInView(ref, { once: true, amount: 0.35 });
 
     return (
         <motion.div
@@ -25,7 +25,6 @@ function StatItem({
             transition={{
                 duration: 0.3,
                 ease: "easeOut",
-                // delay kecil biar ada rasa stagger; dibatasi max 0.36s
                 delay: Math.min(0.36, index * 0.08),
             }}
         >

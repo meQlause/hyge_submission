@@ -10,9 +10,6 @@
   --color-foreground: var(--foreground);
 }
 
-/* define custom design tokens in v4 */
-@import "tailwindcss";
-
 @theme {
   --breakpoint-xs: 375px;
   --breakpoint-lg2: 1024px;
@@ -21,8 +18,8 @@
   --breakpoint-xxxl: 1960px;
 }
 
-.custom-transition {
-  transition: grid-template-rows 300ms ease-out, background-color 0ms ease-out;
+html {
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -74,4 +71,7 @@ body {
 }
 .ts-reverse {
   animation-direction: reverse;
+}
+.custom-transition {
+  transition: grid-template-rows 300ms ease-out, background-color 0ms ease-out;
 }

@@ -105,7 +105,7 @@ export interface FieldAreaProps {
 
 export interface UseCarouselDragOptionsProps {
     length: number;
-    startIndex?: number;
+    startIndex: number;
     onChange?: (index: number) => void;
 };
 

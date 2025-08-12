@@ -17,8 +17,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
     const toggle = (i: number) => setOpen((prev) => (prev === i ? -1 : i));
 
     return (
-        <section className="w-full min-w-[375px] bg-[#FAFAFA] px-[40px] xxl:px-[80px] py-[120px]">
-            {/* Header */}
+        <section id="services" className="w-full min-w-[375px] bg-[#FAFAFA] px-[40px] xxl:px-[80px] py-[120px]">
             <div className="flex flex-col justify-center items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -52,12 +51,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
             </div>
 
             <div className="max-w-[1440px] mx-auto mt-[96px] flex flex-col lg2:flex-row gap-[40px] items-start justify-center lg2:gap-[80px]">
-                {/* Image panel */}
                 <motion.div
                     initial={{ opacity: 0, y: 10, scale: 0.98 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    // sedikit scale ketika ada item aktif (bukan animasi interaktif di icon)
                     animate={{ scale: open >= 0 ? 1.02 : 1 }}
                     transition={{ duration: 0.28, ease: "easeOut" }}
                     className="relative mt-[15px] overflow-hidden rounded-xl bg-neutral-100 w-full min-h-[330px] lg2:min-h-[493px] lg2:min-w-[432px] xxl:min-w-[600px] xxl:min-h-[685px] xxxl:min-w-[680px] xxxl:min-h-[777px]"
@@ -72,7 +69,6 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
                     />
                 </motion.div>
 
-                {/* Accordion list */}
                 <div className="mt-[80px] lg2:my-auto w-full">
                     {data.map((item, index) => {
                         const isOpen = open === index;

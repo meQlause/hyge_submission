@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Instagram } from "lucide-react";
-import { motion } from "framer-motion"; // ← add
+import { motion } from "framer-motion"; 
 import { ContactSectionProps } from "@/utils/interfaces";
 import { FieldArea } from "../ui/FieldArea";
 import { Field } from "../ui/Field";
@@ -35,7 +35,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
     };
 
     return (
-        <section className="max-w-[1440px] mx-auto w-full px-[20px] min-w-[375px] ">
+        <section id="contact" className="max-w-[1440px] mx-auto w-full px-[20px] min-w-[375px] ">
             <div className="max-w-[1400px] rounded-xl bg-[#101014] text-neutral-100 px-[20px] py-[60px] xxl:px-[80px] xxl:py-[90px] flex flex-col lg2:flex-row justify-between gap-20">
 
                 {/* LEFT column (fade-up) */}
@@ -79,7 +79,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
                     </div>
                 </motion.div>
 
-                {/* RIGHT column (form) (fade-up with slight delay) */}
                 <motion.form
                     onSubmit={handleSubmit}
                     initial={{ opacity: 0, y: 16 }}

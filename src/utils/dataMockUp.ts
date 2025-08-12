@@ -47,53 +47,53 @@ export const FEATURED = {
     data: [
         {
             image: {
-                src: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1400&auto=format&fit=crop",
+                src: "/featured1.png",
                 alt: "Modern kitchen with island and warm lighting",
             },
             title: "Modern kitchen refit",
             description:
-                "This kitchen transformation brought sleek, modern design and enhanced functionality to our client’s home. We installed custom cabinetry, high-quality worktops, and state-of-the-art appliances, creating a stylish yet practical space perfect for cooking and entertaining. With attention to every detail, we delivered a kitchen that balances aesthetics and usability.",
+                "This kitchen transformation brought sleek, modern design and enhanced  functionality to our client’s home. We installed custom cabinetry, high-quality worktops, and state-of-the-art appliances, creating a stylish yet practical space perfect for cooking and entertaining. With attention to every detail, we delivered a kitchen that balances aesthetics and usability.",
             tags: ["Kitchen", "4 weeks"],
             testimonial: {
                 quote:
                     "LifetimeArt completely transformed our kitchen, making it both beautiful and highly functional. The craftsmanship was outstanding, and the team was professional and communicative throughout. We couldn’t be happier with the result!",
                 author: "Rachel Morgan",
                 avatar:
-                    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&auto=format&fit=crop",
+                    "/featured-avatar1.png",
             },
         },
         {
             image: {
-                src: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=1400&auto=format&fit=crop",
+                src: "/featured2.png",
                 alt: "Beautiful garden path with flowers",
             },
             title: "External garden path build",
             description:
                 "Our team designed and installed a stunning garden path using natural stone, integrating seamlessly into the client’s existing landscape. The path adds both beauty and functionality, making the garden more accessible while enhancing its overall charm.",
-            tags: ["Garden", "2 weeks"],
+            tags: ["External Works", "6 weeks"],
             testimonial: {
                 quote:
-                    "LifetimeArt delivered a garden path that exceeded our expectations. It’s functional, beautiful, and perfectly complements our outdoor space.",
+                    "The team at LifetimeArt did an amazing job on our garden path. It’s sturdy, looks fantastic, and has completely transformed our outdoor space. They listened to our vision and delivered exactly what we wanted—highly recommended!.",
                 author: "Michael Turner",
                 avatar:
-                    "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=256&auto=format&fit=crop",
+                    "/featured-avatar2.png",
             },
         },
         {
             image: {
-                src: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1400&auto=format&fit=crop",
+                src: "/featured3.png",
                 alt: "Luxury bathroom interior",
             },
             title: "Bathroom renovation",
             description:
-                "We transformed this bathroom into a spa-like retreat, complete with modern fixtures, premium tiling, and improved lighting. The design maximizes comfort and style, creating a relaxing and functional space.",
-            tags: ["Bathroom", "3 weeks"],
+                "We revitalized this bathroom with a fresh, modern design, incorporating high-end tiling, sleek fixtures, and efficient lighting. The layout was optimized to maximize space, creating a luxurious and relaxing atmosphere. The final result is a beautifully crafted bathroom that enhances both comfort and functionality.",
+            tags: ["Kitchen", "3 weeks"],
             testimonial: {
                 quote:
-                    "LifetimeArt completely revamped our bathroom and it feels like a luxury hotel now. The attention to detail is unmatched!",
+                    "LifetimeArt completely transformed our kitchen, making it both beautiful and highly functional. The craftsmanship was outstanding, and the team was professional and communicative throughout. We couldn’t be happier with the result!",
                 author: "Sophie Morgan",
                 avatar:
-                    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=256&auto=format&fit=crop",
+                    "/featured-avatar3.png",
             },
         },
     ],
@@ -111,7 +111,7 @@ export const SERVICES = {
     heading: "What we do",
     subheading: "Find out which one of our services fit the needs of your project",
     image: {
-        src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop",
+        src: "/service.jpg",
         alt: "Warm kitchen interior with island and wooden stools",
     },
     data: [
@@ -119,40 +119,40 @@ export const SERVICES = {
             icon: UtensilsCrossed,
             title: "Kitchens",
             description:
-                "At LifetimeArt, we design and build stunning kitchens tailored to your style and needs. Whether you’re after a sleek modern space or a classic, timeless look, our expert team delivers high-quality craftsmanship, functionality, and attention to detail to create the heart of your home.",
+                "At LifetimeArt, we design and build stunning kitchens tailored to your style and needs. Whether you prefer sleek modern lines or a timeless, classic look, our team delivers premium craftsmanship, functional layouts, and meticulous attention to detail—creating a kitchen you’ll love to cook and gather in.",
         },
         {
             icon: Building2,
             title: "Loft Conversions",
             description:
-                "Transform unused attic space into bright, practical rooms—from home offices to extra bedrooms—handled end-to-end, planning to finish.",
+                "Transform unused loft space into a beautiful, practical part of your home. From cozy bedrooms to bright home offices, we handle everything from structural adjustments to finishing touches, ensuring your new space is safe, stylish, and seamlessly integrated with your existing home.",
         },
         {
             icon: Bath,
             title: "Bathrooms",
             description:
-                "Spa-like makeovers or compact refreshes with durable fixtures and water-wise solutions.",
+                "We create bathrooms that balance relaxation and practicality, with designs ranging from spa-inspired retreats to minimalist, functional spaces. Our team sources high-quality fixtures and finishes, ensuring durability, elegance, and comfort for years to come.",
         },
         {
             icon: Home,
             title: "Extensions",
             description:
-                "Add light-filled living areas or kitchen diners with seamless ties to your existing architecture.",
+                "Expand your living space without compromising on style. Whether it’s a kitchen extension, a new family room, or an entire additional floor, we work closely with you to design and build an extension that complements your home and adds value.",
         },
         {
             icon: Hammer,
             title: "Restorations",
             description:
-                "Careful restorations that respect original character while upgrading comfort and performance.",
+                "Preserve the charm of your property while upgrading it for modern living. Our restoration work combines traditional craftsmanship with modern techniques to breathe new life into historic or worn-down spaces.",
         },
         {
             icon: Trees,
             title: "External Works",
             description:
-                "Landscaping, patios, and outdoor structures built to last and to complement your home.",
+                "Enhance the beauty and functionality of your outdoor areas. From garden landscaping to patios, pathways, and exterior lighting, we create inviting spaces that connect your home to nature.",
         },
     ],
-}
+};
 
 export const CONTACTS = {
     eyebrow: "Contact",
@@ -164,20 +164,19 @@ export const CONTACTS = {
 }
 
 export const NAV_LINKS = [
-    { href: "/About", label: "About" },
-    { href: "/Services", label: "Services" },
-    { href: "/Our", label: "Our work" },
-    { href: "/FAQs", label: "FAQs" },
-    { href: "/Contact", label: "Contact" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#our-work", label: "Our work" },
+    { href: "#faqs", label: "FAQs" },
+    { href: "#contact", label: "Contact" },
 ];
 
 export const IMAGES = [
-    { src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1974&auto=format&fit=crop", alt: "Warm minimalist dining room with wood table and framed art" },
-    { src: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1974&auto=format&fit=crop", alt: "Cozy living room with sunlit sofa and plants" },
-    { src: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1974&auto=format&fit=crop", alt: "Modern cabin with large windows in a lush forest" },
-    { src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1974&auto=format&fit=crop", alt: "Minimal living space with neutral palette" },
-    { src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1974&auto=format&fit=crop", alt: "Minimal living space with neutral palette" },
-    { src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1974&auto=format&fit=crop", alt: "Minimal living space with neutral palette" },
+    { src: "/1.png", alt: "Warm minimalist dining room with wood table and framed art" },
+    { src: "/2.png", alt: "Cozy living room with sunlit sofa and plants" },
+    { src: "/3.png", alt: "Modern cabin with large windows in a lush forest" },
+    { src: "/4.png", alt: "Minimal living space with neutral palette" },
+    { src: "/5.png", alt: "Minimal living space with neutral palette" },
 ];
 
 export const TESTIMONIALS = {
@@ -189,7 +188,7 @@ export const TESTIMONIALS = {
         {
             rating: 5,
             content:
-                "Refit did an incredible job on our kitchen. The craftsmanship was top-notch, and the team was professional from start to finish. Highly recommend!",
+                "I couldn’t be happier with my loft conversion.The attention to detail and quality of work were outstanding.Refit made the whole process smooth and stress-free!",
             author: "Emily Carter",
             avatar:
                 "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=256&auto=format&fit=crop",
@@ -197,50 +196,10 @@ export const TESTIMONIALS = {
         {
             rating: 5,
             content:
-                "Refit turned our cramped kitchen into a bright, functional space. On time and spotless!",
-            author: "Drew Carter",
+                "Refit transformed our outdoor space with a beautiful garden path. The work was completed on time, and the finish is excellent. A great team to work with!",
+            author: "Emily Carter",
             avatar:
                 "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&auto=format&fit=crop",
-        },
-        {
-            rating: 5,
-            content:
-                "Flawless bathroom remodel. Clear updates, careful crew, and beautiful results.",
-            author: "Sofia Park",
-            avatar:
-                "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=256&auto=format&fit=crop",
-        },
-        {
-            rating: 4,
-            content:
-                "Living room built-ins look custom-made (because they are). Great attention to detail.",
-            author: "Eric Dunn",
-            avatar:
-                "https://images.unsplash.com/photo-1541534401786-2077eed87a74?q=80&w=256&auto=format&fit=crop",
-        },
-        {
-            rating: 5,
-            content:
-                "They handled permits and kept us stress-free. Quality craft from start to finish.",
-            author: "Nadia Russo",
-            avatar:
-                "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=256&auto=format&fit=crop",
-        },
-        {
-            rating: 5,
-            content:
-                "Deck refresh looks brand new. Pricing was transparent and fair. Highly recommend.",
-            author: "Sam Keller",
-            avatar:
-                "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=256&auto=format&fit=crop",
-        },
-        {
-            rating: 4,
-            content:
-                "Small fixes, big difference. They noticed things I hadn’t—super thorough team.",
-            author: "Irene Zhao",
-            avatar:
-                "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=256&auto=format&fit=crop",
-        },
+        }
     ],
 }

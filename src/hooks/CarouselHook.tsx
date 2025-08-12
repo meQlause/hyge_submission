@@ -4,6 +4,7 @@
 import { UseCarouselDragOptionsProps } from "@/utils/interfaces";
 import { useRef, useState, useCallback, useEffect, useMemo } from "react";
 
+
 export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouselDragOptionsProps) => {
 
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -32,7 +33,7 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
         const track = trackRef.current;
         if (!container || !track) return { min: 0, max: 0 }
         const max = 0;
-        const min = container.clientWidth - track.scrollWidth; // negative
+        const min = container.clientWidth - track.scrollWidth; 
         return { min, max };
     };
 
@@ -53,7 +54,7 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
     const sensitivity = 2.5;
     const onMoveClientX = (clientX: number) => {
         if (!isDragging.current) return;
-        const dx = (clientX - startX.current) * sensitivity; // amplify movement
+        const dx = (clientX - startX.current) * sensitivity; 
         const proposed = lastX.current + dx;
         const { min, max } = getBounds();
         posX.current = Math.max(min, Math.min(max, proposed));
@@ -112,3 +113,5 @@ export const useCarouselDrag = ({ length, startIndex = 0, onChange }: UseCarouse
 
     return { containerRef, trackRef, active, goTo, eventProps };
 }
+
+
