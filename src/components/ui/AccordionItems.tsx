@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 "use client";
 
 import { useId } from "react";
@@ -74,7 +76,7 @@ const AccordionItemService: React.FC<AccordionItemProps> = ({
                 aria-expanded={isOpen}
                 onClick={() => onToggle(index)}
             >
-                {Icon && <Icon className="shrink-0 size-[40px] text-neutral-600" />}
+                {Icon && <img src={Icon} className="shrink-0 size-[40px] text-neutral-600" />}
                 <span className="flex-1 size-[20px] font-[500] md:text-base text-neutral-800 text-left">
                     {title}
                 </span>

@@ -21,7 +21,7 @@ export type PagerType = {
 };
 
 export type ServiceItemType = {
-    icon: React.ElementType;
+    icon: string;
     title: string;
     description: string;
 };

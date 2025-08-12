@@ -1,5 +1,3 @@
-import { Bath, Building2, Hammer, Home, Trees, UtensilsCrossed } from "lucide-react";
-
 export const FAQ = {
     eyebrow: "FAQs",
     heading: "Answering Your Questions",
@@ -116,37 +114,31 @@ export const SERVICES = {
     },
     data: [
         {
-            icon: UtensilsCrossed,
-            title: "Kitchens",
-            description:
-                "At LifetimeArt, we design and build stunning kitchens tailored to your style and needs. Whether you prefer sleek modern lines or a timeless, classic look, our team delivers premium craftsmanship, functional layouts, and meticulous attention to detail—creating a kitchen you’ll love to cook and gather in.",
-        },
-        {
-            icon: Building2,
+            icon: "/icons/1.png",
             title: "Loft Conversions",
             description:
                 "Transform unused loft space into a beautiful, practical part of your home. From cozy bedrooms to bright home offices, we handle everything from structural adjustments to finishing touches, ensuring your new space is safe, stylish, and seamlessly integrated with your existing home.",
         },
         {
-            icon: Bath,
+            icon: "/icons/2.png",
             title: "Bathrooms",
             description:
                 "We create bathrooms that balance relaxation and practicality, with designs ranging from spa-inspired retreats to minimalist, functional spaces. Our team sources high-quality fixtures and finishes, ensuring durability, elegance, and comfort for years to come.",
         },
         {
-            icon: Home,
+            icon: "/icons/3.png",
             title: "Extensions",
             description:
                 "Expand your living space without compromising on style. Whether it’s a kitchen extension, a new family room, or an entire additional floor, we work closely with you to design and build an extension that complements your home and adds value.",
         },
         {
-            icon: Hammer,
+            icon: "/icons/4.png",
             title: "Restorations",
             description:
                 "Preserve the charm of your property while upgrading it for modern living. Our restoration work combines traditional craftsmanship with modern techniques to breathe new life into historic or worn-down spaces.",
         },
         {
-            icon: Trees,
+            icon: "/icons/5.png",
             title: "External Works",
             description:
                 "Enhance the beauty and functionality of your outdoor areas. From garden landscaping to patios, pathways, and exterior lighting, we create inviting spaces that connect your home to nature.",

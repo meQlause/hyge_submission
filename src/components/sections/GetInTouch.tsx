@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
-import { Instagram } from "lucide-react";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { ContactSectionProps } from "@/utils/interfaces";
 import { FieldArea } from "../ui/FieldArea";
 import { Field } from "../ui/Field";
@@ -35,10 +36,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
     };
 
     return (
-        <section id="contact" className="max-w-[1440px] mx-auto w-full px-[20px] min-w-[375px] ">
+        <section id="contact" className="scroll-mt-[50px] max-w-[1440px] mx-auto w-full px-[20px] min-w-[375px] ">
             <div className="max-w-[1400px] rounded-xl bg-[#101014] text-neutral-100 px-[20px] py-[60px] xxl:px-[80px] xxl:py-[90px] flex flex-col lg2:flex-row justify-between gap-20">
 
-                {/* LEFT column (fade-up) */}
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -67,13 +67,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ eyebrow, title, blurb, 
                         <p className="text-[18px] font-[600] text-neutral-100 mb-2">Follow us</p>
                         <div className="flex items-center gap-3">
                             <Social href="#" label="Instagram">
-                                <Instagram className="size-[24px]" />
+                                <img src="/icons/ig.png" className="size-[24px]" />
                             </Social>
                             <Social href="#" label="TikTok">
-                                <span className="text-sm font-semibold">♪</span>
+                                <img src="/icons/tiktok.png" className="size-[24px]" />
                             </Social>
                             <Social href="#" label="X">
-                                <span className="text-xs font-bold">X</span>
+                                <img src="/icons/x.png" className="size-[24px]" />
                             </Social>
                         </div>
                     </div>

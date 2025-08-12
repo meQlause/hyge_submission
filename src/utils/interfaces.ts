@@ -45,7 +45,7 @@ export interface AccordionItemProps {
     index: number;
     isOpen: boolean;
     onToggle: (i: number) => void;
-    icon?: React.ElementType;
+    icon?: string;
     title: string;
     children: React.ReactNode;
 }

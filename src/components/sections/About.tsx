@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ImprovementSpecialists = () => {
     return (
-        <section id="about" className="max-w-[1440px] mx-auto flex flex-col lg2:flex-row lg2:gap-[300px] w-full min-w-[375px] px-[40px] xxl:px-[80px] text-black bg-white my-[120px] justify-between">
+        <section id="about" className="scroll-mt-[105px] max-w-[1440px] mx-auto flex flex-col lg2:flex-row lg2:gap-[300px] w-full min-w-[375px] px-[40px] xxl:px-[80px] text-black bg-white my-[120px] justify-between">
             <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
