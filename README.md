@@ -9,3 +9,9 @@
 - Tailwind CSS
 - Framer Motion
 - react-parallax
+
+## Mobile Experience
+
+- Different navbar style on mobile
+- Swipeable image carousel
+- Parallax on mobile support

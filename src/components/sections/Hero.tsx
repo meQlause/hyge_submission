@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 const Hero = () => {
     return (
         <section className="relative mx-auto w-full min-w-[375px] bg-[#101014] xxl:h-[900px] h-[834px] overflow-hidden text-white">
-
             <div className="absolute xxl:hidden left-[20px] right-[20px] top-[113px] h-[695px] z-0 pointer-events-none">
                 <Parallax speed={-20} className="relative -top-[10px] xs:top-[0px] h-full rounded-[12px] w-full">
                     <div className="relative h-[695px] w-full overflow-hidden rounded-[12px]">
